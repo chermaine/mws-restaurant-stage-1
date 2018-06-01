@@ -1,45 +1,56 @@
 @charset "utf-8";
 /* CSS Document */
+body {
+  max-width: 100vw;
+}
 
 body,td,th,p{
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 10pt;
-	color: #333;
-	line-height: 1.5;
-	
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+  color: #333;
+  line-height: 1.5;
 }
+
 body {
-	background-color: #fdfdfd;
-	margin: 0;
-	position:relative;
+  background-color: #fdfdfd;
+  margin: 0;
+  position:relative;
 }
+
 ul, li {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 10pt;
-	color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  color: #333;
 }
+
 a {
-	color: orange;
-	text-decoration: none;
+  color: orange;
+  text-decoration: none;
 }
+
 a:hover, a:focus {
-	color: #3397db;
-	text-decoration: none;
+  color: #3397db;
+  text-decoration: none;
 }
+
 a img{
-	border: none 0px #fff;
+  border: none 0px #fff;
 }
+
 h1, h2, h3, h4, h5, h6 {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0 0 20px;
 }
+
 article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-	display: block;
+  display: block;
 }
+
 #maincontent {
   background-color: #f3f3f3;
   min-height: 100%;
 }
+
 #footer {
   background-color: #444;
   color: #aaa;
@@ -49,16 +60,20 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   text-align: center;
   text-transform: uppercase;
 }
+
 /* ====================== Navigation ====================== */
 nav {
-  width: 100%;
-  height: 80px;
+  width: 100vw;
+  min-height: 80px;
+  max-height: 25vh;
   background-color: #252831;
   text-align:center;
 }
+
 nav h1 {
   margin: auto;
 }
+
 nav h1 a {
   color: #fff;
   font-size: 14pt;
@@ -66,6 +81,7 @@ nav h1 a {
   letter-spacing: 10px;
   text-transform: uppercase;
 }
+
 #breadcrumb {
     padding: 10px 40px 16px;
     list-style: none;
@@ -104,25 +120,29 @@ nav h1 a {
   width: 100%;
   background-color: #ccc;
 }
+
 /* ====================== Restaurant Filtering ====================== */
 .filter-options {
-  width: 100%;
-  height: 50px;
+  padding-top: 1.2rem;
+  width: 100vw;
+  min-height: 50px;
   background-color: #3397DB;
   align-items: center;
 }
+
 .filter-options h2 {
   color: white;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: normal;
-  line-height: 1;
+  line-height: 1.2rem;
   margin: 0 20px;
 }
+
 .filter-options select {
   background-color: white;
   border: 1px solid #fff;
   font-family: Arial,sans-serif;
-  font-size: 11pt;
+  font-size: 1rem;
   height: 35px;
   letter-spacing: 0;
   margin: 10px;
@@ -135,26 +155,28 @@ nav h1 a {
   background-color: #f3f3f3;
   list-style: outside none none;
   margin: 0;
-  padding: 30px 15px 60px;
+  padding: 0;
   text-align: center;
 }
 #restaurants-list li {
   background-color: #fff;
-  border: 2px solid #ccc;
+  border-top: 2.5px solid #ccc;
+  border-bottom: 2.5px solid #ccc;
   font-family: Arial,sans-serif;
-  margin: 15px;
+  /*margin-left: auto;*/
+  /*margin-right: auto;*/
   min-height: 380px;
-  padding: 0 30px 25px;
   text-align: left;
-  width: 270px;
+  width: 100vw;
 }
 #restaurants-list .restaurant-img {
   background-color: #ccc;
   display: block;
   margin: 0;
-  max-width: 100%;
-  min-height: 248px;
-  min-width: 100%;
+  max-width: 100vw;
+  /*min-height: 248px;*/
+  min-height: 50vh;
+  /*min-width: 100%;*/
 }
 #restaurants-list li h1 {
   color: #f18200;
@@ -175,9 +197,9 @@ nav h1 a {
   border-bottom: 3px solid #eee;
   color: #fff;
   display: inline-block;
-  font-size: 10pt;
-  margin: 15px 0 0;
-  padding: 8px 30px 10px;
+  font-size: 1.2rem;
+  margin: 1rem 0 1rem;
+  padding: 0.5rem 1.5rem 0.5rem 1.5rem;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
@@ -219,7 +241,7 @@ nav h1 a {
   line-height: 1.1;
 }
 #restaurant-img {
-	width: 90%;
+  width: 90%;
 }
 #restaurant-address {
   font-size: 12pt;
@@ -235,7 +257,7 @@ nav h1 a {
   padding: 2px 0;
   text-align: center;
   text-transform: uppercase;
-	width: 90%;
+  width: 90%;
 }
 #restaurant-container, #reviews-container {
   border-bottom: 1px solid #d9d9d9;
@@ -273,4 +295,30 @@ nav h1 a {
 }
 #restaurant-hours td {
   color: #666;
+}
+
+@media screen and (max-width: 420px) {
+  nav h1 a {
+    font-size: 1rem;
+    letter-spacing: 0.35rem;
+  }
+  .filter-options {
+    text-align: center;
+  }
+  .filter-options select {
+    width: 80vw;
+    height: 2rem;
+    margin: 0.75rem;
+    padding: 0 0.75rem;
+  }
+  #restaurants-list li {
+    text-align: center;
+  }
+  #restaurants-list p {
+    font-size: 1rem;
+    line-height: 1.2em;
+  }
+  #restaurants-list li h1 {
+    font-size: 1.2rem;
+  }
 }
